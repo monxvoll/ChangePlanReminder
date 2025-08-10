@@ -1,10 +1,10 @@
-# NetflixPlanReminder
+# ReminderBot
 
 A simple Java Telegram bot that reminds you to switch your Netflix subscription plan before the billing date.
 
 ## How it works
 
-Netflix lets you change your plan anytime. This bot helps you save money by reminding you to upgrade to the most expensive plan, then downgrade to the cheapest one just before the monthly charge.
+This bot helps you keep track your subscription payment by sending a reminder message one day before each billing date, so you never miss a payment or renewal.
 
 ## Setup
 
