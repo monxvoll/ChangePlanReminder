@@ -1,26 +1,20 @@
 package sender;
 
+import io.javalin.Javalin;
+
 import java.time.*;
 import java.util.concurrent.*;
 
-import static spark.Spark.*;
 
 public class Reminder {
     public static void main(String[] args) {
-        // Arrancar servidor web para pings
-        port(getHerokuAssignedPort());
-        get("/health", (req, res) -> "OK");
-        //Iniciar Bot
+        // Inicia Javalin para el pingeo
+        Javalin.create().start(Integer.parseInt(System.getenv().getOrDefault("PORT", "8080")))
+                .get("/health", ctx -> ctx.status(200).result("OK"));
+
+        //Inicia el bot
         int paymentDay = Integer.parseInt(System.getenv("PAYMENT_DAY"));  //Dia de la siguiente facturacion
         scheduleReminder(paymentDay);
-    }
-
-    private static int getHerokuAssignedPort() {
-        String port = System.getenv("PORT");
-        if (port != null) {
-            return Integer.parseInt(port);
-        }
-        return 4567; //Puerto Default
     }
 
     public static void scheduleReminder(int paymentDay) {
