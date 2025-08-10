@@ -12,7 +12,7 @@ Netflix lets you change your plan anytime. This bot helps you save money by remi
 
 2. Create a `.env` file in the root directory with the following variables:
 
-.- BOT_TOKEN=your_telegram_bot_token
+- BOT_TOKEN=your_telegram_bot_token
 - CHAT_ID=your_telegram_chat_id
 - PAYMENT_DAY=your_netflix_billing_day
 
