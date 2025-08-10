@@ -3,10 +3,24 @@ package sender;
 import java.time.*;
 import java.util.concurrent.*;
 
+import static spark.Spark.*;
+
 public class Reminder {
     public static void main(String[] args) {
+        // Arrancar servidor web para pings
+        port(getHerokuAssignedPort());
+        get("/health", (req, res) -> "OK");
+        //Iniciar Bot
         int paymentDay = Integer.parseInt(System.getenv("PAYMENT_DAY"));  //Dia de la siguiente facturacion
         scheduleReminder(paymentDay);
+    }
+
+    private static int getHerokuAssignedPort() {
+        String port = System.getenv("PORT");
+        if (port != null) {
+            return Integer.parseInt(port);
+        }
+        return 4567; //Puerto Default
     }
 
     public static void scheduleReminder(int paymentDay) {
