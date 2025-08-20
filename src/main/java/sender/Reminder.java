@@ -20,7 +20,7 @@ public class Reminder {
     public static void scheduleReminder(int paymentDay) {
         ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor(); // programador de tareas en un hilo separado.
         //Bloque d codigo q se ejecuta en un hilo
-        Runnable task = () -> Message.sendMessage("\uD81A\uDCC2 Mañana es el cobro de Netflix, recuerda cambiar tu plan hoy");
+        Runnable task = () -> Message.sendMessage("\uD81A\uDCC2 Mañana es el cobro :0");
 
         long initialDelay =  calculateDelayInHours(paymentDay); // Horas a esperar desde ahora hasta el siguiente cobro d Netflix
         long period = 30L * 24L; // horas entre recordatorio
