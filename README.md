@@ -14,7 +14,7 @@ This bot helps you keep track your subscription payment by sending a reminder me
 
 - BOT_TOKEN=your_telegram_bot_token
 - CHAT_ID=your_telegram_chat_id
-- PAYMENT_DAY=your_netflix_billing_day
+- PAYMENT_DAY=your_billing_day
 
 # Notes
 
